@@ -23,7 +23,7 @@ function setup() {
 }
 
 function draw() {
-  background(255);
+  clear();
   strokeCap(actStrokeCap);
 
   for (var gridY = 0; gridY < tileCount; gridY++) {
