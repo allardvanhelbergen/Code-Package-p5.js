@@ -1,3 +1,19 @@
+/**
+ * changing strokeweight and strokecaps on diagonals in a grid
+ *
+ * MOUSE
+ * position x          : left diagonal strokeweight
+ * position y          : right diagonal strokeweight
+ * left click          : freeze randomness
+ *
+ * KEYS
+ * 1                   : round strokecap
+ * 2                   : square strokecap
+ * 3                   : project strokecap
+ * s                   : save png
+ * q                   : toggle draw left
+ * w                   : toggle draw right
+ */
 'use strict';
 
 var actStrokeCap;
@@ -8,6 +24,8 @@ var tileWidth;
 var tileHeight;
 var strokeDenominator = 20;
 var strokeCaps;
+var isRandom = true;
+var activeRandomSeed;
 
 function setup() {
   createCanvas(600, 600);
@@ -25,6 +43,10 @@ function setup() {
 function draw() {
   clear();
   strokeCap(actStrokeCap);
+
+  if (!isRandom) {
+    randomSeed(activeRandomSeed);
+  }
 
   for (var gridY = 0; gridY < tileCount; gridY++) {
     for (var gridX = 0; gridX < tileCount; gridX++) {
@@ -46,6 +68,11 @@ function draw() {
       }
     }
   }
+}
+
+function mousePressed() {
+  isRandom = !isRandom;
+  activeRandomSeed = random(100000);
 }
 
 function keyPressed() {
