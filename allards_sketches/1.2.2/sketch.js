@@ -1,3 +1,19 @@
+/**
+ * extract and sort the color palette of an image
+ *
+ * MOUSE
+ * position x          : resolution
+ *
+ * KEYS
+ * 1-7                 : load different images
+ * q                   : no color sorting
+ * w                   : sort colors on hue
+ * e                   : sort colors on saturation
+ * r                   : sort colors on brightness
+ * t                   : sort colors on greyscale (luminance)
+ * s                   : save png
+ * c                   : save color palette
+ */
 'use strict';
 
 var colors;
@@ -75,13 +91,6 @@ function keyReleased() {
   if (key == '5') currentImage = 4;
   if (key == '6') currentImage = 5;
   if (key == '7') currentImage = 6;
-  // if (key == '1') loadImage(images[0], setImage);
-  // if (key == '2') loadImage(images[1], setImage);
-  // if (key == '3') loadImage(images[2], setImage);
-  // if (key == '4') loadImage(images[3], setImage);
-  // if (key == '5') loadImage(images[4], setImage);
-  // if (key == '6') loadImage(images[5], setImage);
-  // if (key == '7') loadImage(images[6], setImage);
 
   if (key == 'q') sortMode = null;
   if (key == 'w') sortMode = gd.HUE;
@@ -89,7 +98,3 @@ function keyReleased() {
   if (key == 'r') sortMode = gd.BRIGHTNESS;
   if (key == 't') sortMode = gd.GRAYSCALE;
 }
-
-// function setImage(loadedImageFile, path) {
-//   img = loadedImageFile;
-// }

@@ -1,3 +1,16 @@
+/**
+ * drawing with a changing shape by draging the mouse.
+ *
+ * MOUSE
+ * position x          : length
+ * position y          : thickness and number of lines
+ * drag                : draw
+ *
+ * KEYS
+ * 1-3                 : stroke color
+ * del, backspace      : erase
+ * s                   : save png
+ */
 'use strict';
 
 var currentStrokeColor;

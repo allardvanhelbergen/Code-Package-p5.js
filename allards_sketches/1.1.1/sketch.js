@@ -1,3 +1,12 @@
+/**
+ * draw the color spectrum by moving the mouse
+ *
+ * MOUSE
+ * position x/y        : resolution
+ *
+ * KEYS
+ * s                   : save png
+ */
 'use strict';
 
 var stepX;
